@@ -34,6 +34,7 @@ module.exports = {
       'components': resolve('src/components'),
       'page': resolve('src/page'),
       'less': resolve('src/less'),
+      'getDataApi': resolve('src/getDataApi'),
       'js': resolve('src/js')
     }
   },
