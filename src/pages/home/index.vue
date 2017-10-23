@@ -6,6 +6,9 @@
     </div>
 </template>
 <script>
+  import selfGZKMsgCtrl from 'getDataApi/index';
+  import GetMsg from 'getDataApi/doMsg';
+
   export default{
     data () {
       return {}
@@ -14,6 +17,12 @@
     methods: {},
     mounted () {
 
+    },
+    created(){
+      selfGZKMsgCtrl.doBindMsg(144, (data)=>{
+        console.log('执行了',data)
+      });
+      selfGZKMsgCtrl.doSendAppMsg(GetMsg.doGetMsg_144(0))
     },
     watch: {}
   }
