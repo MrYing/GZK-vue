@@ -7,6 +7,13 @@ export default new Router({
   routes: [
     /* 首页 */
     {
+      path: '/test',
+      name: 'test',
+      component: resolve => require(['../pages/test'], resolve),
+      alias: '/index'
+    },
+    /* 首页 */
+    {
       path: '/',
       name: 'home',
       component: resolve => require(['../pages/home/'], resolve),

@@ -24,6 +24,8 @@ module.exports = {
       $: "jquery",
       jQuery: "jquery",
       "window.jQuery": "jquery",
+      "moment": "moment",
+      "_": "lodash",
     }),
 
   ],
