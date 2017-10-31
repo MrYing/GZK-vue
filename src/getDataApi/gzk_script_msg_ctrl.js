@@ -38,7 +38,6 @@ function gzkMSGCtrl() {
      * @param strFunCallBack 回调的函数名称
      */
     this.doBindMsg = function (intMsgID, strFunCallBack) {
-      console.log('11111111111111111111111',strFunCallBack)
         self.doUnBindMsg(intMsgID);
         // arrayMsgBindList.push("{'intMsgID':"+intMsgID+",'strFunCallBack':'"+strFunCallBack+"'}");
         arrayMsgBindList.push({"intMsgID": intMsgID, "strFunCallBack": strFunCallBack});

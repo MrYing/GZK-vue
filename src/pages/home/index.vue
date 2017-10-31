@@ -8,7 +8,6 @@
 <script>
   import selfGZKMsgCtrl from 'getDataApi/index';
   import GetMsg from 'getDataApi/doMsg';
-
   export default{
     data () {
       return {}
@@ -19,8 +18,13 @@
 
     },
     created(){
+      console.log("sdd",aaaa)
+
       selfGZKMsgCtrl.doBindMsg(144, (data)=>{
         console.log('执行了',data)
+
+
+
       });
       selfGZKMsgCtrl.doSendAppMsg(GetMsg.doGetMsg_144(0))
     },

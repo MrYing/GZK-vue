@@ -4,21 +4,24 @@
  */
 import gzkMSGCtrl from './gzk_script_msg_ctrl'
 
-var strWXOpenID = "";//微信编号
-var strUserSysID = "";//用户编号
-var strUserPhone = "";//用户电话
-var intUserType = 0;//用户类型
-var strUserAlias = "";//用户昵称
+function aaaa() {
+  var strWXOpenID = "aaa";//微信编号
+  let strUserSysID = "";//用户编号
+  let strUserPhone = "";//用户电话
+  let intUserType = 0;//用户类型
+  let strUserAlias = "";//用户昵称
 
-var floatCurGPSLat = 0;//当前 gps
-var floatCurGPSLng = 0;
+  let floatCurGPSLat = 0;//当前 gps
+  let floatCurGPSLng = 0;
 
-var intPageBodyHeight = 0;//Body区域高度
-var intPageBodyWidth = 0;//Body区域宽度
+  let intPageBodyHeight = 0;//Body区域高度
+  let intPageBodyWidth = 0;//Body区域宽度
 
-var selfPageSysCtrl = null;//全局事件广播以及页面控制
-var selfGZKMsgCtrl = null;//消息处理对象
-window.BMAP_AUTHENTIC_KEY="zDXNHFM64QOPMEgsqIzg8arpdh21Ccex"; //百度地图 api key
+  let selfPageSysCtrl = null;//全局事件广播以及页面控制
+  let selfGZKMsgCtrl = null;//消息处理对象
+  window.BMAP_AUTHENTIC_KEY="zDXNHFM64QOPMEgsqIzg8arpdh21Ccex"; //百度地图 api key
+}
+
 /**
  * 初始化 消息控制器
  */

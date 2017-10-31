@@ -47,11 +47,12 @@
       <div style="float: right;width: 50%;">
         <div style="height: 450px; overflow: auto;">
           <p style="text-align: center;font-size: 18px;">物流单更改记录</p>
-          <div class="divList" style="margin: 20px;background-color: #eee;margin-top: 10px;padding: 10px;">
-            <p style="text-align: center;width: 100%">中国-河口-陈小姐 更新时间：2017年12月21日</p>
+          <div class="divList" style="margin: 20px;background-color: #eee;margin-top: 10px;padding: 10px;" v-for="item in items">
+            {{ parentMessage }} - {{ index }} - {{ item.message }}
+         <!--   <p style="text-align: center;width: 100%">中国-河口-陈小姐 更新时间：2017年12月21日</p>
             <p style="text-align: center;width: 100%">车牌：145454455</p>
             <p style="text-align: center;width: 100%">更新位置：广州->北京</p>
-            <p style="text-align: center;width: 100%">电话：1888888888</p>
+            <p style="text-align: center;width: 100%">电话：1888888888</p>-->
 
           </div>
           <div class="divList" style="margin: 20px;background-color: #eee;margin-top: 10px;padding: 10px;">
@@ -119,6 +120,10 @@
   export default{
     data () {
       return {
+        items: [
+          {message: 'foo' },
+          {message: 'Bar' }
+        ],
         modal2: false,
         modal1: false,
         formItem: {
