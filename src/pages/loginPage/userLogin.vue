@@ -37,7 +37,7 @@
 </template>
 <script>
   import Local from 'local'
-
+  import {mapActions} from "vuex"
   /*import canvasBg from 'components/canvasBg';*/
   export default{
     data () {
@@ -61,12 +61,15 @@
     /*  canvasBg*/
     },
     methods: {
-
+      ...mapActions({
+        setLoginStatus:"setLoginStatus"
+      }),
 
       handleSubmit(name) {
         this.$refs[name].validate((valid) => {
           if (valid) {
             this.$Message.success('登录成功!');
+            this.setLoginStatus({isLogin:true})
             this.$router.push({name:'userOnePassword'})
           } else {
             this.$Message.error('登录失败!');
