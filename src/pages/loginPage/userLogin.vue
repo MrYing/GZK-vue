@@ -1,14 +1,14 @@
 <template>
   <div id="gzk_userLogin">
-    <canvasBg parentsClass='gzk_userLogin'
+   <!-- <canvasBg parentsClass='gzk_userLogin'
               :config='{
                 distance : 70,
                 radius : 50
               }'
-    ></canvasBg>
-
+    ></canvasBg>-->
+    <div class="gzk_bg"></div>
     <div class="g_loginFrom" id="login_box">
-      <div class="gzk_loginTitle" style="margin-bottom: 20px;">果真快 . 物流链管理</div>
+      <div class="gzk_loginTitle" style="margin-bottom: 20px;color: #000">果真快 . 物流链管理</div>
       <div  style="margin: auto auto;">
         <Form ref="formInline" :model="formInline" :rules="ruleInline" inline>
           <FormItem prop="user" >
@@ -21,9 +21,8 @@
             <Icon type="ios-locked-outline" slot="prepend"></Icon>
             </Input>
           </FormItem>
-          <p style="color: #ffffff;text-decoration:underline;margin-left: 120px;cursor: pointer"  @click="instance('info')">
+          <p style="text-decoration:underline;margin-left: 120px;cursor: pointer"  @click="instance('info')">
             忘记密码?</p>
-
           <FormItem style="width: 100%;margin-top: 20px;">
             <Button style="margin-left: 40%" type="primary" @click="handleSubmit('formInline')">登录</Button>
             <!--<template>
@@ -37,7 +36,9 @@
   </div>
 </template>
 <script>
-  import canvasBg from 'components/canvasBg';
+  import Local from 'local'
+
+  /*import canvasBg from 'components/canvasBg';*/
   export default{
     data () {
       return {
@@ -57,15 +58,16 @@
       }
     },
     components: {
-      canvasBg
+    /*  canvasBg*/
     },
     methods: {
+
 
       handleSubmit(name) {
         this.$refs[name].validate((valid) => {
           if (valid) {
             this.$Message.success('登录成功!');
-            this.$router.push({name:'home'})
+            this.$router.push({name:'userOnePassword'})
           } else {
             this.$Message.error('登录失败!');
           }

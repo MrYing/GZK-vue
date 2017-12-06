@@ -18,15 +18,24 @@
 
     },
     created(){
-      console.log("sdd",aaaa)
 
-      selfGZKMsgCtrl.doBindMsg(144, (data)=>{
-        console.log('执行了',data)
+
+
+
+      let moment = require('moment');
+      console.log(moment().format("dddd, MMMM Do YYYY, h:mm:ss a"))
+     /* selfGZKMsgCtrl.doBindMsg(10000, (data)=>{
+        console.log('执行了11111',data)
+
+
+
+
 
 
 
       });
-      selfGZKMsgCtrl.doSendAppMsg(GetMsg.doGetMsg_144(0))
+      selfGZKMsgCtrl.doSendApp2Msg(GetMsg.doGetMsg_10000("18839537516","q"))
+*/
     },
     watch: {}
   }

@@ -1,11 +1,15 @@
 <template>
-  <div id="app" style="min-width: 900px;background-color: #eeeeee">
-    <div :class=" 'main_box' "  id="main_box" >
+  <div id="app" style="min-width: 1000px;background-color: #eeeeee">
+    <div :class=" 'GZk_box' "  id="GZk_box" >
       <MainNavLeft></MainNavLeft>
       <HeaderTop></HeaderTop>
-      <div id="gzk_editor">
-        <router-view></router-view>
+      <div>
+        <div id="gzk_editor">
+          <router-view></router-view>
+        </div>
       </div>
+
+
 
       <!-- <keep-alive exclude="enroll">
          <router-view v-if="$route.meta.keepAlive"></router-view>
@@ -34,7 +38,6 @@
 
 
 export default {
-  name: 'app',
   data() {
     return{
 
@@ -51,11 +54,16 @@ export default {
   computed: {
 
   },
+
+  methods: {
+
+  },
+  created:{
+
+
+
+},
+
 }
 </script>
 
-<style>
-
-
-
-</style>

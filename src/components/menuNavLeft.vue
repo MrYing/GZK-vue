@@ -4,8 +4,7 @@
     <Menu :theme="theme2" :style='{minHeight:minHeight}'>
       <div class="menuNavTopImg">
         <img  src="http://www.guozk.com/images/applogo.png" alt="图片未显示">
-        <p class="userName">{{username}}</p>
-
+        <p class="userName">{{getUser.nickName}}</p>
       </div>
       <Submenu name="1">
         <template slot="title">
@@ -18,19 +17,17 @@
       <Submenu name="2">
         <template slot="title">
           <Icon type="ios-people"></Icon>
-          权限管理
+          管理者权限
         </template>
-        <router-link :to='{name:"memberSuperSUProList"}'> <MenuItem name="2-1">成员权限</MenuItem></router-link>
         <router-link :to='{name:"companySuperSuProList"}'>  <MenuItem name="2-2">公司权限</MenuItem></router-link>
-        <router-link :to='{name:"mySuperSuProList"}'> <MenuItem name="2-3">我的权限</MenuItem></router-link>
-
-
-
+        <router-link :to='{name:"memberSuperSUProList"}'> <MenuItem name="2-1">成员权限</MenuItem></router-link>
+        <router-link :to='{name:"mySuperSuProList"}'> <MenuItem name="2-3">系统权限</MenuItem></router-link>
       </Submenu>
     </Menu>
   </div>
 </template>
 <script>
+  import {mapGetters} from 'vuex'
   export default{
     data () {
       return {
@@ -41,6 +38,12 @@
       }
     },
     components: {},
+    computed: {
+      ...mapGetters({
+          getUser: 'getUser'
+        }
+      )
+    },
     methods: {},
     mounted () {
     },

@@ -7,12 +7,14 @@ import mutations from './mutations';
 import state from './state';
 import getters from './getters';
 import actions from './actions';
+import Local from 'local';
+
 
 Vue.use(Vuex);
 const debug = process.env.NODE_ENV !== 'production';
 
 export default new Vuex.Store({
-  state,
+  state: Local.getJSON('vuex') || state,
   mutations,
   actions,
   getters,

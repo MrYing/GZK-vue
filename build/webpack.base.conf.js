@@ -24,6 +24,8 @@ module.exports = {
       $: "jquery",
       jQuery: "jquery",
       "window.jQuery": "jquery",
+      "moment": "moment",
+      "_": "lodash",
     }),
 
   ],
@@ -35,7 +37,11 @@ module.exports = {
       'page': resolve('src/page'),
       'less': resolve('src/less'),
       'getDataApi': resolve('src/getDataApi'),
-      'js': resolve('src/js')
+      'js': resolve('src/js'),
+      'utils': resolve('src/utils'),
+      'local': resolve('src/utils/local'),
+      'assets': resolve('src/assets'),
+      'uploadImg': resolve('src/assets/uploadImg'),
     }
   },
   module: {

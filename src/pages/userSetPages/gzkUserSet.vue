@@ -1,28 +1,10 @@
 <template>
   <div id="gzkUserSet">
-
-    <div>
-      <div>
-        <Upload
-          ref="upload"
-          :show-upload-list="false"
-          :default-file-list="defaultList"
-          :on-success="handleSuccess"
-          :format="['jpg','jpeg','png']"
-          :max-size="2048"
-          :before-upload="handleBeforeUpload"
-          multiple
-          type="drag"
-          action="//jsonplaceholder.typicode.com/posts/"
-          style="display: inline-block;width:200px;">
-          <div style="width: 200px;height:200px;line-height: 200px;">
-            <Icon type="camera" size="20"></Icon>
-          </div>
-        </Upload>
-      </div>
-
-      <Input v-model="desc" placeholder="请输入..." style="width: 300px"></Input>
-      <Button @click='savePhoto_clickHandler()'>保存</Button>
+    <div  style="margin:10px auto;width: 500px;">
+      <div style="background-color: #c8c8c8;border-radius: 50%;height: 200px;width: 200px;margin-left: 50px;"></div>
+      <Input v-model="formData.nickName" placeholder="请输入昵称..." style="width: 300px;margin-top: 20px;"></Input>
+     <!-- <Button @click='savePhoto_clickHandler()'>保存</Button>-->
+      <Button style="display: block;width: 300px;margin-top: 20px;" @click="submitUserInfo_clickHandler()" type="primary">保存</Button>
     </div>
 
     <div v-for='item in dataList'>
@@ -35,9 +17,16 @@
   </div>
 </template>
 <script>
+  import {mapActions} from 'vuex';
+
   export default {
     data () {
       return {
+        formData: {
+          nickName: '',
+          desc: '',
+          container: ''
+        },
         isShow:false,
         defaultList: [
           {
@@ -56,52 +45,16 @@
       }
     },
     methods: {
-      savePhoto_clickHandler(){
-        console.log(this.desc);
-        this.dataList.push({
-          src:'',
-          desc:this.desc
-        })
-        console.log(this.dataList);
-      },
-      handleView (name) {
-        this.imgName = name;
-        this.visible = true;
-      },
-      handleRemove (file) {
-        // 从 upload 实例删除数据
-        const fileList = this.$refs.upload.fileList;
-        this.$refs.upload.fileList.splice(fileList.indexOf(file), 1);
-      },
-      handleSuccess (res, file) {
-        // 因为上传过程为实例，这里模拟添加 url
-        file.url = 'https://o5wwk8baw.qnssl.com/7eb99afb9d5f317c912f08b5212fd69a/avatar';
-        file.name = '7eb99afb9d5f317c912f08b5212fd69a';
-      },
-      handleFormatError (file) {
-        this.$Notice.warning({
-          title: '文件格式不正确',
-          desc: '文件 ' + file.name + ' 格式不正确，请上传 jpg 或 png 格式的图片。'
-        });
-      },
-      handleMaxSize (file) {
-        this.$Notice.warning({
-          title: '超出文件大小限制',
-          desc: '文件 ' + file.name + ' 太大，不能超过 2M。'
-        });
-      },
-      handleBeforeUpload () {
-        const check = this.uploadList.length < 5;
-        if (!check) {
-          this.$Notice.warning({
-            title: '最多只能上传 5 张图片。'
-          });
-        }
-        return check;
+      ...mapActions({
+        setUser : 'setUser'
+      }),
+      submitUserInfo_clickHandler(){
+        let user = Object.assign({},this.formData)
+        this.setUser(user)
       }
     },
     mounted () {
-      this.uploadList = this.$refs.upload.fileList;
+
     }
   }
 </script>

@@ -3,6 +3,9 @@
  * Created by binli on 2016-11-04.
  */
 export default gmc
+/*
+var boolDebug=true
+*/
 
 function gmc(setKeyLevel) {
     this.keyLevel = parseInt(setKeyLevel);

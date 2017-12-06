@@ -60,6 +60,18 @@ class GetMsg {
       "'strMsgDesc':''" +
       "}],'GZKMSGVer':2}";
   }
+ doGetMsg_200( intUploadReason, intUploadType, strSourceID, strUploadValue) {
+  var strTemp = "{'GZKMSG':[{" +
+    "'intMsgID':200," +
+    "'intUploadReason':" + intUploadReason + "," +
+    "'intUploadType':" + intUploadType + "," +
+    "'strSourceID':'" + strSourceID + "'," +
+    "'strUploadValue':'" + strUploadValue + "'," +
+    "'intMsgStatus':0," +
+    "'strMsgDesc':''" +
+    "}],'GZKMSGVer':1}";
+  return strTemp;
+}
 
 
   /**
@@ -696,6 +708,26 @@ class GetMsg {
       "'strMsgDesc':''" +
       "}],'GZKMSGVer':2}";
   }
+
+  /**
+   * 消息 10000
+   * GZKMsg_10000_UserLogin
+   * 登录
+   * 真实消息 2015-11-01
+   * @param strAccounts 帐号 帐号
+   * @param strPassword 密码 密码
+   * @returns {string}
+   */
+  doGetMsg_10000( strAccounts, strPassword) {
+  return "{'GZKMSG':[{" +
+    "'intMsgID':10000," +
+    "'strAccounts':'" + strAccounts + "'," +
+    "'strPassword':'" + strPassword + "'," +
+    "'intMsgStatus':0," +
+    "'strMsgDesc':''" +
+    "}],'GZKMSGVer':2}";
+}
+
 
 
   /**

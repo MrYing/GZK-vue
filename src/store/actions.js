@@ -1,7 +1,7 @@
 export default {
   setUser :({commit},data={})=>{
     if(data){
-      console.log('actions----------',data)
+      console.log('actions----------',data);
       commit('SET_USER',data)
     }
   },

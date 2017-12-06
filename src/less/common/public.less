@@ -44,7 +44,18 @@ input[type="number"]{-moz-appearance:textfield;}
   }
 }
 .pagesNav{
-  .margin_l(20px)
+  .margin_l(20px);
+  padding-top: 20px;
+
+}
+.min-w{
+  min-width: 1000px;
+}
+.g_fl{
+  float: left;
+}
+.g_fr{
+  float: right;
 }
 
 //-------------全局定位-------------
@@ -130,6 +141,7 @@ input[type="number"]{-moz-appearance:textfield;}
   width: @w;
   height: @h;
 }
+
 /*
 * 文字 垂直居中
 **/
@@ -154,6 +166,9 @@ input[type="number"]{-moz-appearance:textfield;}
 }
 .text-r(){
   text-align: right;
+}
+.cup() {
+  cursor: pointer;
 }
 
 /*
@@ -313,6 +328,18 @@ input[type="number"]{-moz-appearance:textfield;}
     .pos-cc();
   }
 }
+
+.gzkPageScrollBar {
+  scrollbar-arrow-color: #F5F5F5;
+  scrollbar-face-color: #c0c0c0;
+  scrollbar-3dlight-color: #c0c0c0;
+  scrollbar-highlight-color: #F5F5F5;
+  scrollbar-shadow-color: #F5F5F5;
+  scrollbar-darkshadow-color: #c0c0c0;
+  scrollbar-track-color: #F5F5F5;
+  scrollbar-base-color: #F5F5F5;
+}
+
 /*  类名  */
 /*
 * 清除浮动
@@ -359,6 +386,74 @@ input[type="number"]{-moz-appearance:textfield;}
   text-align: right;
 }
 }
+
+.g-h(@h,@lineH){
+  height: @h;
+  line-height:@lineH;
+}
+.g-bgColor(@bgc){
+  background-color:@bgc;
+}
+.g-marginT(@mpx){
+  margin-top:@mpx;
+}
+.g-marginL(@mpx){
+  margin-left:@mpx;
+}
+.g-marginR(@mpx){
+  margin-right:@mpx;
+}
+.g-marginB(@mpx){
+  margin-bottom:@mpx;
+}
+
+/*border*/
+.g-border-1(@bor){
+  border: 1px solid @bor;
+}
+.g-border(@numPX,@bor){
+  border: @numPX solid @bor;
+}
+.g-border-b(@numPX,@bor){
+  border-bottom: @numPX solid @bor;
+}
+.g-bor-radius(@radius){
+  border-radius:@radius ;
+}
+.marginAUTO(){
+  margin: 0 auto;
+}
+.wind_th(@width){
+  width: @width;
+}
+.hig_ht(@hight){
+  height: @hight;
+}
+.padd_ing(@padding){
+  padding: @padding;
+}
+.padd_ingL(@padd_ingL){
+  padding-left: @padd_ingL;
+}
+.padd_ingR(@padd_ingR){
+  padding-right: @padd_ingR;
+}
+.padd_ingT(@padd_ingT){
+  padding-top: @padd_ingT;
+}
+.padd_ingB(@padd_ingB){
+  padding-bottom: @padd_ingB;
+}
+.icon-radius(@w,@h,@px,@bgC){
+  width: @w;
+  height: @h;
+  border-radius:@px;
+  background-color: @bgC;
+  display: inline-block;
+}
+
+
+
 
 
 /** 页面 回到顶端按钮样式 */

@@ -4,7 +4,9 @@
  */
 
 import gmc from './gzk_script_coder';
+
 import  'jQuery';
+
 function gzkMSGCtrl() {
 
     var self = this;
@@ -26,13 +28,17 @@ function gzkMSGCtrl() {
     var strServerDLAddress = "http://msg.guozk.com/demo_msg_app_proc.jsp";
     // var strServerDLAddress = "http://192.168.1.188:8084/GZK-APP-Service-V1.2/GZK-DL-Dir/";
 
-    var strServerULURL = "http://msg.guozk.com/demo_msg_app_proc.jsp";
+    var strServerULURL = "http://192.168.80.138:8084/GZK-APP-Service-V1.2/ul_json.jsp";
     // var strServerULURL = "http://192.168.10.189:8084/GZK-BCom-V1.0/gzk_bcom_proc.jsp";
     // var strServerULURL = "http://www.guozk.com:8080/bcom/gzk_bcom_proc.jsp";
 
+    /*物流链APP*/
+    var strServerApp2Url="http://192.168.80.138:8084/GZK-WLL-Service/demo_msg_app_proc.jsp"
+
     var arrayMsgBindList = [];
 
-    /**
+
+  /**
      * 绑定消息到函数
      * @param intMsgID 消息编号
      * @param strFunCallBack 回调的函数名称
@@ -54,6 +60,7 @@ function gzkMSGCtrl() {
         }
     };
 
+
     /**
      * 获取消息函数绑定数组
      * @returns {Array}
@@ -72,7 +79,24 @@ function gzkMSGCtrl() {
         return intReturn;
     }
 
-    /**
+  this.doSendApp2Msg = function (strMsgSend) {
+    console.log("doSendApp2Msg",strMsgSend);
+    $.post(strServerApp2Url,
+      {
+        gzkmsg: selfGMCoder.code(strMsgSend)
+      },
+      function (data, status) {
+        if (status === "success") {
+          doMsgCallBack(eval("(" + selfGMCoder.decode(data) + ")"));
+        } else {
+          doMsgCallBack("");
+        }
+
+      });
+  };
+
+
+  /**
      * 发送消息到App服务器
      * @param strMsgSend 消息内容
      */
